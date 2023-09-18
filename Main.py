@@ -154,7 +154,7 @@ class Main:
                 4-1. Save result frame
                 '''
                 if self.valid_count == self.check_num:
-                    self.http_service.send_image(self.lp_str, self.lp_frame)
+                    self.http_service.upload_lp(self.lp_str, self.lp_frame)
         
         self.lpr_thread_start = False
     

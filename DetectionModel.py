@@ -13,7 +13,7 @@ import configparser
 
 
 class LPBboxDetectionModel:
-    MODEL_PATH='./data/lp_bbox.tflite'
+    MODEL_PATH='./data/weights/lp_bbox.tflite'
     IMG_HEIGHT=192
     IMG_WIDTH=256
     EDGETPU_SHARED_LIB = {
@@ -93,7 +93,7 @@ class LPBboxDetectionModel:
         return ret
 
 class LPVertexDetectionModel:
-    MODEL_PATH='./data/lp_vertex.tflite'
+    MODEL_PATH='./data/weights/lp_vertex.tflite'
     IMG_HEIGHT=128
     IMG_WIDTH=128
     EDGETPU_SHARED_LIB = {

@@ -27,7 +27,7 @@ class HttpService:
             
         return is_valid
     
-    def send_image(self, lp_str, img):
+    def upload_lp(self, lp_str, img):
         # save detected lp image
         file_name = f'{lp_str}_'+ datetime.datetime.now().strftime('%Y-%m-%d-%d-%H-%M-%S') + '.jpg'
         folder_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'history')
@@ -37,7 +37,7 @@ class HttpService:
         cv2.imwrite(file_dir, img)
         
         # REST API
-        self.api = self.config.get('SERVER', 'SEND_IMAGE')
+        self.api = self.config.get('SERVER', 'UPLOAD')
         files = {'image': (file_name, open(file_dir, 'rb'), 'multipart/form-data', {'Expires': '0'})}
         try:
             response = requests.post(self.url+api, files=files)
