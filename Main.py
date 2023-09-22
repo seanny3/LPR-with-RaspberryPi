@@ -188,7 +188,7 @@ class Main:
             open_flag = True
             close_flag = True
             set_angle(10)
-            set_color(255, 255, 255)
+            set_color(0, 0, 0)
             while True:
                 if self.barrier_control_thread_join_flag:
                     raise KeyboardInterrupt("[SENSOR]: terminated!")
@@ -199,7 +199,7 @@ class Main:
 
                     if open_flag:
                         print("[SENSOR]: the barrier is open!")
-                        set_angle(100)
+                        set_angle(85)
                         time.sleep(0.7)
                         pi.set_servo_pulsewidth(servo_pin, 0)
                         open_flag = False
@@ -207,7 +207,7 @@ class Main:
                     time.sleep(1)
                 else:   # Close the door, if the vehicle is not found in the DB
                     open_flag = True
-                    set_color(255, 255, 255)
+                    set_color(0, 0, 0)
                     
                     if close_flag:
                         print("[SENSOR]: the barrier is close!")
