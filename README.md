@@ -37,7 +37,7 @@
 </details>
 
 ### 3.3 차량번호인식(LPOcrModel)
-- Naver clova OCR API 사용
+- Naver clova OCR API 사용: https://clova.ai/ocr/?lang=ko
 
 ### 3.4 유효차량검증(HttpService)
 - 서버에서 DB에 저장된 차량 중에서 결격유무 판단
@@ -53,8 +53,7 @@
     - GPIO 17
     - 5V power
     - ground
-- GPIO 핀번호와 아래 사진속 번호와 혼동 주의
-<p align="center"><img src="./img/gpio-real.jpg" width="50%"></p>
+<p align="center"><img src="./img/gpio-real.jpg" width="40%"></p>
 
 ### 3.6 번호판 업로드(HttpService)
 - 입차 기록에 필요한 번호판 인식 결과 이미지 서버로 전송
@@ -62,6 +61,8 @@
 <p align="center"><img src="./img/web-entry.jpg" width="100%"></p>
 
 ## 4. 프로젝트 결과
+- 12다1234: 미등록 차량
+- 54나4028: 등록 차량
 <p align="center"><img src="./img/result.gif" width="100%"></p>
 
 ## 5. 프로젝트 사용방법
@@ -85,6 +86,8 @@ git clone [repository]
 cd [repository]
 ```
 ### 5.4 python 가상환경 및 라이브러리 설치
+- tensorflow 라이브러리 설치 전 운영체제와 python 버전 확인 필요
+- https://github.com/Qengineering/TensorFlow-Raspberry-Pi_64-bit
 ```
 python3.9 -m pip install virtualenv
 python3.9 -m virtualenv venv
@@ -94,7 +97,8 @@ pip install pigpio
 pip install opencv-python
 pip install Pillow
 pip install requests requests_toolbet
-pip install tensorflow tflite-runtime==2.11.0
+pip install [tensorflow whl dir]
+pip install [tflite_runtime whl dir]
 
 python Main.py
 ```
